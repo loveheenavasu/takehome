@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../../assets/fonts/Twine.otf') format('truetype');
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.navBar {
+    background: #000;
+    width: 100%;
+    color: #a3b736;
+    padding: 5px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoImg {
+    width: 150px;
+    object-fit: contain;
+}
+
+.navbarMenu .menuList {
+    font-family: 'MyCustomFont', sans-serif;
+    display: flex;
+    list-style-type: none;
+    font-size: 32px;
+}
+
+.navbarMenu ul li {
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.profileInfo {
+    display: flex;
+    align-items: center;
+    width: 15%;
+    justify-content: end;
+}
+
+.inputField {
+    background-color: #a3b736;
+    color: #000;
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.inputField.active {
+    border-radius: 25px;
+}
+
+.inputField.active input {
+    transition: opacity 0.4s ease;
+    opacity: 1;
+    background: none;
+    width: 200px;
+    border: none;
+    outline: none;
+}
+
+.profileImg img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profileInfoitem {
+    margin: 10px;
+    position: relative;
+}
+
+.notificationIcon {
+    position: absolute;
+    font-size: 13px;
+    top: 38%;
+    right: -16px;
+    background: #9e9fea;
+    border-radius: 10px;
+    padding: 2px 7px;
+    color: #4546ab;
+    align-items: center;
+    display: flex;
+}
+
+.hamburger {
+    display: none;
+    font-size: 35px;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+}
+
+.navbarMenu.active .menuList li:after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width 0.7s ease, background-color 0.5s ease;
+}
+
+.siteLogo {
+    display: flex;
+    align-items: center;
+}
+
+/* #4546ab */
+@media screen and (max-width: 768px) {
+
+
+    .notificationIcon {
+        right: -10px;
+        font-size: 9px;
+        padding: 2px 4px;
+
+    }
+
+    .profileImg img {
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .hamburger {
+        display: flex;
+
+    }
+
+    .navbarMenu.active {
+        left: 0;
+        background: #1e1f1e;
+
+        transition: all 0.5s;
+        opacity: 1;
+    }
+
+    .navbarMenu {
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: -110%;
+        opacity: 1;
+        transition: all 0.5s;
+
+    }
+
+    .navbarMenu .menuList {
+        flex-direction: column;
+    }
+
+    .navbarMenu .menuList li {
+        margin: 20px 0px;
+        text-align: center;
+    }
+
+    .navbarMenu.active .menuList li:hover:after {
+        width: 100%;
+        background: #5b721d;
+    }
+
+}
